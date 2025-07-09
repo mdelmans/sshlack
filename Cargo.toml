@@ -1,0 +1,17 @@
+[package]
+name = "sshlack"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.98"
+argon2 = "0.5.3"
+clap = { version = "4.5.40", features = ["derive"] }
+emojic = "0.4.1"
+env_logger = "0.11.8"
+log = "0.4.27"
+ratatui = "0.29.0"
+russh = "0.52.1"
+sqlx = { version = "0.8.6", features = [ "runtime-tokio", "sqlite" ] }
+terminal-keycode = "1.1.1"
+tokio = "1.45.1"
