@@ -1,6 +1,16 @@
+<img src="https://github.com/mdelmans/sshlack/blob/main/logo.png?raw=true" alt="Logo" width="100"/>
+
 # Welcome to sshLack
 
 SSHLack is an ssh chatroom written in Rust.
+
+Login to a public chat
+
+```sh
+$ ssh {your_username}@sshlack.com 
+```
+On first login type in a password you want to use for your account.
+
 
 ## How to run?
 
@@ -27,6 +37,6 @@ $ RUST_LOG=info cargo run
 $ ssh {username}@127.0.0.1 -p 2222
 ```
 
-On first login, type in a password you want to use for your username.
+On first login, type in a password you want to use for your account.
 
 5. Have fun!
