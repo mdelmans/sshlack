@@ -11,8 +11,9 @@ $ ssh {your_username}@sshlack.com
 ```
 On first login type in a password you want to use for your account.
 
+<img src="https://github.com/mdelmans/sshlack/blob/main/screenshot.png?raw=true" alt="Logo" width="500"/>
 
-## How to run?
+## How to start your own server?
 
 1. Clone the repo
 
