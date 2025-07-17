@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use log::{error, info, debug};
+use log::{error, info};
 
 use tokio::sync::Mutex;
 
