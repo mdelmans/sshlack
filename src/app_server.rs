@@ -217,8 +217,9 @@ impl AppServer {
 
 impl Server for AppServer {
     type Handler = App;
-    fn new_client(&mut self, _: Option<std::net::SocketAddr>) -> App {
-        info!("New client attempting connection");
+    fn new_client(&mut self, address: Option<std::net::SocketAddr>) -> App {
+        let source = address.map_or("unknown".to_string(), |addr| addr.to_string());
+        info!("New client attempting connection from {}", source);
         App::new(Arc::clone(&self.controller))
     }
 }

@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use log::{error, info};
+use log::{error, info, debug};
 
 use tokio::sync::Mutex;
 
@@ -63,8 +63,9 @@ impl Handler for App {
         let app_controller = self
             .create_controller(session, channel.id(), self.user.clone())
             .await?;
-
+        info!("Created app controller for {}", self.user.username);
         self.server_controller.add_client(app_controller).await;
+        info!("Added app controller to server controller for {}", self.user.username);
         Ok(true)
     }
 
@@ -112,11 +113,13 @@ impl Handler for App {
             width: col_width as u16,
             height: row_height as u16,
         };
+        info!("PTY requested for {}", self.user.username);
         if let Some(controller) = &self.app_controller {
             let mut controller = controller.lock().await;
             controller.resize_terminal(rect);
         }
         session.channel_success(channel)?;
+        info!("PTY granted for {}", self.user.username);
 
         Ok(())
     }
